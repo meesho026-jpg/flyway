@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b50">
+  <title>Flight Results | FlywaysGo</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f7fc;
+      color: #102b50;
+    }
+
+    header {
+      background: #102b50;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span { color: #65a5ff; }
+
+    h1 { margin-top: 30px; }
+
+    .search-summary {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      box-shadow: 0 4px 18px #102b5010;
+    }
+
+    .item small {
+      display: block;
+      color: #718096;
+      margin-bottom: 8px;
+    }
+
+    .item strong {
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .results {
+      background: white;
+      padding: 30px;
+      margin-top: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .plane {
+      font-size: 48px;
+    }
+
+    .results h2 {
+      margin-bottom: 10px;
+    }
+
+    .results p {
+      color: #718096;
+      line-height: 1.7;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 25px;
+      background: #1769e0;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 10px;
+      color: #718096;
+      font-size: 13px;
+    }
+
+    @media(max-width: 600px) {
+      .search-summary {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .results { padding: 22px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Flyways<span>Go</span></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <h1>Your Flight Search</h1>
+
+  <section class="search-summary">
+
+    <div class="item">
+      <small>FROM</small>
+      <strong id="from">Loading...</strong>
+    </div>
+
+    <div class="item">
+      <small>TO</small>
+      <strong id="to">Loading...</strong>
+    </div>
+
+    <div class="item">
+      <small>DEPARTURE</small>
+      <strong id="date">Loading...</strong>
+    </div>
+
+    <div class="item">
+      <small>PASSENGERS</small>
+      <strong id="passengers">Loading...</strong>
+    </div>
+
+  </section>
+
+  <section class="results">
+
+    <div class="plane">✈️</div>
+
+    <h2>Flight Options</h2>
+
+    <p id="message">
+      Checking your search details...
+    </p>
+
+    <p>
+      Verified flight options and final prices will be
+      displayed here once connected to the flight inventory.
+    </p>
+
+    <a href="./index.html" class="back-btn">
+      ← Back to Home
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 FlywaysGo. All Rights Reserved.
+</footer>
+
+<script>
+  const saved = sessionStorage.getItem("flywaysgo_search");
+
+  if (saved) {
+    try {
+      const data = JSON.parse(saved);
+
+      document.getElementById("from").textContent = data.from;
+      document.getElementById("to").textContent = data.to;
+      document.getElementById("date").textContent = data.departureDate;
+      document.getElementById("passengers").textContent = data.passengers;
+
+      document.getElementById("message").textContent =
+        "Your search details have been received successfully.";
+    } catch (error) {
+      document.getElementById("message").textContent =
+        "Search details could not be loaded. Please search again.";
+    }
+  } else {
+    document.getElementById("message").textContent =
+      "No search found. Please start a new flight search.";
+  }
+</script>
+
+</body>
+</html>
