@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b50">
+  <title>FlywaysGo Admin Panel</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5fb;
+      color: #102b50;
+    }
+
+    header {
+      background: #102b50;
+      color: white;
+      padding: 22px;
+    }
+
+    .container {
+      max-width: 950px;
+      width: 92%;
+      margin: auto;
+    }
+
+    header h2 {
+      margin: 0;
+    }
+
+    .subtitle {
+      color: #d5e4fa;
+      font-size: 13px;
+      margin-top: 7px;
+    }
+
+    .panel {
+      background: white;
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px #102b5010;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d5dfeb;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+    }
+
+    .notice {
+      background: #fff5dc;
+      color: #805700;
+      padding: 15px;
+      border-radius: 9px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 22px;
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 15px;
+      margin-top: 22px;
+      background: #1769e0;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: not-allowed;
+      opacity: .6;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      color: #1769e0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media(max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h2>✈️ FlywaysGo Admin</h2>
+    <div class="subtitle">Flight Management Dashboard</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="panel">
+
+    <h3>Add New Flight</h3>
+
+    <form id="flightForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label>Airline Name</label>
+          <input type="text" placeholder="Example: IndiGo" required>
+        </div>
+
+        <div class="field">
+          <label>Flight Number</label>
+          <input type="text" placeholder="Example: 6E-203" required>
+        </div>
+
+        <div class="field">
+          <label>Departure City</label>
+          <input type="text" placeholder="Example: Delhi" required>
+        </div>
+
+        <div class="field">
+          <label>Arrival City</label>
+          <input type="text" placeholder="Example: Mumbai" required>
+        </div>
+
+        <div class="field">
+          <label>Departure Date</label>
+          <input type="date" required>
+        </div>
+
+        <div class="field">
+          <label>Departure Time</label>
+          <input type="time" required>
+        </div>
+
+        <div class="field">
+          <label>Arrival Time</label>
+          <input type="time" required>
+        </div>
+
+        <div class="field">
+          <label>Available Seats</label>
+          <input type="number" min="1" placeholder="Example: 40" required>
+        </div>
+
+        <div class="field">
+          <label>Ticket Price (₹)</label>
+          <input type="number" min="1" placeholder="Example: 4500" required>
+        </div>
+
+        <div class="field">
+          <label>Flight Status</label>
+          <select>
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="notice">
+        <strong>Database connection pending.</strong><br>
+        This form is currently a preview. Flights cannot be saved or shown to customers until the secure database is connected.
+      </div>
+
+      <button type="button" class="save-btn" disabled>
+        Save Flight — Coming Next
+      </button>
+
+    </form>
+
+    <a href="./index.html" class="back">← Back to Website</a>
+
+  </section>
+
+</main>
+
+</body>
+            </html>
+            
