@@ -8,16 +8,130 @@
 
   <title>FlywaysGo — Fly More. Pay Less.</title>
 
-  <meta name="description" content="Book your flights with FlywaysGo. Discover affordable flight deals and enjoy easy flight booking.">
+  <meta name="description" content="Book affordable flights with FlywaysGo.">
 
-  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-  <div id="root"></div>
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">Flyways<span>Go</span></a>
 
-  <script type="module" src="./src/main.jsx"></script>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#offers">Offers</a>
+        <a href="#features">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="login-btn">Login / Sign Up</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Explore The World<br>
+          <span>Fly More. Pay Less.</span>
+        </h1>
+        <p>Discover amazing flight deals and make your next journey affordable with FlywaysGo.</p>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="search-card">
+
+          <div class="trip-options">
+            <label><input type="radio" name="trip" checked> One Way</label>
+            <label><input type="radio" name="trip"> Round Trip</label>
+          </div>
+
+          <div class="search-grid">
+            <div class="field">
+              <label>FROM</label>
+              <input type="text" placeholder="Departure city">
+            </div>
+
+            <div class="field">
+              <label>TO</label>
+              <input type="text" placeholder="Destination city">
+            </div>
+
+            <div class="field">
+              <label>DEPARTURE DATE</label>
+              <input type="date">
+            </div>
+
+            <div class="field">
+              <label>PASSENGERS</label>
+              <select>
+                <option>1 Adult</option>
+                <option>2 Adults</option>
+                <option>3 Adults</option>
+                <option>4 Adults</option>
+                <option>5 Adults</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="search-btn">Search Flights →</button>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-section" id="offers">
+      <div class="container">
+        <div class="offer-box">
+          <div>
+            <h2>FlywaysGo Special Offer!</h2>
+            <p>Discover exclusive discounted flight deals.</p>
+          </div>
+          <div class="discount">UP TO 35% OFF</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose FlywaysGo?</h2>
+          <p>Making your flight booking simple and affordable.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✈️</div>
+            <h3>Easy Booking</h3>
+            <p>Find your preferred flight and submit your booking details easily.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Great Deals</h3>
+            <p>Discover attractive offers on your next flight journey.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎧</div>
+            <h3>Customer Support</h3>
+            <p>Get assistance with your booking and ticket-related queries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <h2>FlywaysGo</h2>
+      <p>Fly More. Pay Less.</p>
+      <p>© 2026 FlywaysGo. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
